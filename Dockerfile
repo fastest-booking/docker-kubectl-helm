@@ -1,8 +1,8 @@
 FROM alpine as build
 ARG HELM_VERSION
 ARG KUBERNETES_VERSION
-ENV HELM_VERSION ${HELM_VERSION:-v2.14.2}
-ENV KUBERNETES_VERSION ${KUBERNETES_VERSION:-v1.15.0}
+ENV HELM_VERSION ${HELM_VERSION:-2.14.2}
+ENV KUBERNETES_VERSION ${KUBERNETES_VERSION:-1.15.0}
 RUN apk add -U openssl curl tar gzip bash ca-certificates git && \
         curl -sSL -o /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
         curl -sSL -O https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.28-r0/glibc-2.28-r0.apk && \
